@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Inspire Games - Play Free Online Games</title>
+  <meta name="description" content="Inspire Games is the ultimate free online gaming portal. Play Bottle Shooter, Bubble Shooter, Granny Haunted Escape, Chess, Temple Run and more directly in your browser.">
+  <meta name="theme-color" content="#0a0e17">
+
+  <!-- Google Fonts: Orbitron & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand-logo" id="brand-home">
+        <div class="brand-icon">⚡</div>
+        <div class="brand-text">
+          <h1>INSPIRE GAMES</h1>
+          <span>FREE ONLINE ARCADE</span>
+        </div>
+      </a>
+
+      <!-- Search Bar -->
+      <div class="header-search">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search-input" class="search-input" placeholder="Search games, genres, or titles..." autocomplete="off">
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="header-actions">
+        <!-- Host Contact Pill for Anisha -->
+        <button id="btn-host-contact" class="host-contact-pill" title="Contact the host Anisha for any problem">
+          <span class="host-avatar">👩‍💻</span>
+          <div class="host-text">
+            <span class="host-tag">HOST</span>
+            <span class="host-desc">Contact the host <strong class="host-name">Anisha</strong> for any problem</span>
+          </div>
+        </button>
+
+        <button id="btn-global-audio" class="btn-icon" title="Toggle Sound">🔊</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-banner">
+        <div class="hero-content">
+          <div class="hero-badge">🔥 FEATURED TITLE OF THE WEEK</div>
+          <h2 class="hero-title">Escape the Ancient Curse in <span>Temple Run</span></h2>
+          <p class="hero-desc">Sprint along ancient temple ruins, dodge roaring flames and spiked traps, and collect priceless golden relics while the Demon Beast stalks right behind you!</p>
+          
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h4 id="stat-total-games">7</h4>
+              <p>Genres Available</p>
+            </div>
+            <div class="stat-item">
+              <h4>100%</h4>
+              <p>Free to Play</p>
+            </div>
+            <div class="stat-item">
+              <h4>0 MB</h4>
+              <p>Instant Browser Load</p>
+            </div>
+          </div>
+
+          <button id="hero-play-btn" class="btn-primary">
+            <span>▶ PLAY TEMPLE RUN NOW</span>
+          </button>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-art-card">
+            <span class="hero-art-icon">🏃</span>
+            <div style="font-family: var(--font-heading); font-size: 16px; color: var(--accent-cyan); font-weight: 700;">TEMPLE RUN: RELIC ESCAPE</div>
+            <div style="font-size: 13px; color: var(--text-muted);">High Speed 3D Endless Runner</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Filter -->
+  <section class="filter-section">
+    <div class="container">
+      <div class="filter-chips">
+        <button class="chip-btn active" data-category="all">🎮 All Games</button>
+        <button class="chip-btn" data-category="action">🏃 Action</button>
+        <button class="chip-btn" data-category="shooting">🎯 Shooting</button>
+        <button class="chip-btn" data-category="puzzle">🔮 Puzzle</button>
+        <button class="chip-btn" data-category="horror">🏚️ Horror & Survival</button>
+        <button class="chip-btn" data-category="strategy">♟️ Strategy</button>
+        <button class="chip-btn" data-category="arcade">👾 Retro Arcade</button>
+        <button class="chip-btn" data-category="favorites">❤️ Favorites</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Games Library Grid -->
+  <main class="games-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span>⚡ Popular Games</span>
+        </h2>
+      </div>
+
+      <div class="games-grid" id="games-grid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Game Theater Modal Arena -->
+  <div class="game-modal-backdrop" id="game-modal">
+    <div class="game-theater">
+      <!-- Arena Header Controls -->
+      <div class="theater-header">
+        <div class="theater-info">
+          <h3 class="theater-title" id="theater-title">Game Title</h3>
+          <span class="theater-genre" id="theater-genre">Genre</span>
+        </div>
+
+        <div class="theater-actions">
+          <button id="btn-pause-game" class="theater-btn" title="Pause or Resume Game">⏸ Pause</button>
+          <button id="btn-restart-game" class="theater-btn" title="Restart Game">🔄 Restart</button>
+          <button id="btn-help-game" class="theater-btn" title="How to Play & Controls">❓ Help</button>
+          <button id="btn-mute-sound" class="theater-btn" title="Mute Game Audio">🔊 Audio</button>
+          <button id="btn-fullscreen-game" class="theater-btn" title="Toggle Fullscreen">⛶ Fullscreen</button>
+          <button id="btn-close-theater" class="theater-btn theater-btn-close" title="Exit to Lobby">✕ Exit</button>
+        </div>
+      </div>
+
+      <!-- Arena Viewport -->
+      <div class="theater-body">
+        <div id="game-canvas-container">
+          <!-- Active Game Canvas or DOM loaded here -->
+        </div>
+      </div>
+
+      <!-- Virtual Touch Controls (Appears on mobile/tablet screens) -->
+      <div class="touch-controls-bar" id="touch-controls-bar">
+        <div class="d-pad">
+          <div></div>
+          <button class="d-btn" id="touch-up">▲</button>
+          <div></div>
+          <button class="d-btn" id="touch-left">◀</button>
+          <button class="d-btn" id="touch-down">▼</button>
+          <button class="d-btn" id="touch-right">▶</button>
+        </div>
+        <div class="action-pad">
+          <button class="act-btn" id="touch-act-a">ACTION</button>
+          <button class="act-btn" id="touch-act-b">USE [E]</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Help & Instructions Modal -->
+  <div class="help-modal-backdrop" id="help-modal">
+    <div class="help-modal">
+      <div class="help-header">
+        <h3 id="help-title">How to Play</h3>
+        <button id="btn-close-help" class="theater-btn theater-btn-close" style="padding: 4px 10px;">✕</button>
+      </div>
+      <div class="help-body">
+        <h4>Objective</h4>
+        <p id="help-goal">Game objective details.</p>
+
+        <h4>Controls & Tips</h4>
+        <ul id="help-controls-list">
+          <!-- Injected dynamically -->
+        </ul>
+      </div>
+      <div class="help-footer">
+        <button class="btn-primary" onclick="document.getElementById('btn-close-help').click()" style="padding: 8px 20px; font-size: 13px;">Got It!</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Host Contact Modal for Anisha -->
+  <div class="host-modal-backdrop" id="host-modal">
+    <div class="host-modal">
+      <div class="host-modal-header">
+        <div class="host-modal-title-wrap">
+          <span class="host-modal-avatar">👑</span>
+          <div>
+            <h3>Contact the Host: Anisha</h3>
+            <span class="host-modal-subtitle">Creator & Host of Inspire Games</span>
+          </div>
+        </div>
+        <button id="btn-close-host-modal" class="theater-btn theater-btn-close" style="padding: 4px 10px;">✕</button>
+      </div>
+      <div class="host-modal-body">
+        <div class="host-tabs-bar" style="display: flex; gap: 8px; margin-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">
+          <button type="button" id="tab-btn-send" class="host-tab-btn active" style="flex: 1; padding: 8px 12px; background: rgba(56, 189, 248, 0.15); border: 1px solid #38bdf8; border-radius: 6px; color: #fff; font-size: 12px; font-weight: 700; cursor: pointer;">
+            📝 Send Message
+          </button>
+          <button type="button" id="tab-btn-inbox" class="host-tab-btn" style="flex: 1; padding: 8px 12px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 6px; color: #94a3b8; font-size: 12px; font-weight: 700; cursor: pointer;">
+            🔒 Host Inbox (<span id="inbox-count">0</span>)
+          </button>
+        </div>
+
+        <!-- View 1: Send Message Form -->
+        <div id="host-view-send">
+          <p class="host-welcome-text">
+            👋 Hi! I'm <strong>Anisha</strong>, the host of <strong>Inspire Games</strong>. Encountering any problems, game glitches, or want to suggest a new game? Send a message below!
+          </p>
+
+          <!-- Privacy & Security Notice -->
+          <div class="host-privacy-badge">
+            <span class="privacy-icon">🛡️</span>
+            <div class="privacy-text">
+              <strong>100% Confidential Support</strong>
+              <span>Messages are sent directly to host Anisha's private inbox. Your personal details and Anisha's contact information are kept strictly private and never shown publicly.</span>
+            </div>
+          </div>
+
+          <form id="host-contact-form" class="host-contact-form">
+            <div class="form-group">
+              <label for="contact-name">Your Name</label>
+              <input type="text" id="contact-name" placeholder="Enter your name or gamer tag..." required>
+            </div>
+            <div class="form-group">
+              <label for="contact-player-email">Your Email / Discord (Optional, for reply)</label>
+              <input type="text" id="contact-player-email" placeholder="Optional: Where Anisha can reply to you...">
+            </div>
+            <div class="form-group">
+              <label for="contact-issue">Problem / Feedback</label>
+              <textarea id="contact-issue" rows="3" placeholder="Describe the issue you faced or what you'd like to tell Anisha..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 12px; margin-top: 8px;">
+              🔒 Send Private Message to Anisha
+            </button>
+          </form>
+
+          <div id="contact-success-msg" class="contact-success-msg" style="display: none;">
+            🎉 Message sent privately to host Anisha! Thank you for helping improve Inspire Games.
+          </div>
+
+          <!-- Quick Button to Open Inbox directly -->
+          <button type="button" id="btn-quick-inbox" style="margin-top: 16px; width: 100%; padding: 11px; background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(168, 85, 247, 0.25)); border: 1px solid #ec4899; border-radius: 8px; color: #fff; font-size: 13px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <span>🔐 Host Anisha Access: Enter PIN to Read Messages ➔</span>
+          </button>
+        </div>
+
+        <!-- View 2: Host Security PIN Screen (Shown if locked) -->
+        <div id="host-view-pin" style="display: none; text-align: center; padding: 24px 16px; background: rgba(0,0,0,0.35); border-radius: 12px; border: 1px solid rgba(236,72,153,0.35);">
+          <div style="font-size: 34px; margin-bottom: 8px;">🔐</div>
+          <h4 style="color: #fff; font-family: var(--font-heading); font-size: 16px; margin-bottom: 6px;">Host Security Access</h4>
+          <p style="color: #94a3b8; font-size: 13px; margin-bottom: 16px;">Please enter your secret 4-digit PIN to access Anisha's inbox.</p>
+          <div style="display: flex; justify-content: center; gap: 8px; margin-bottom: 16px;">
+            <input type="password" id="host-pin-input" maxlength="4" placeholder="••••" style="width: 140px; text-align: center; font-size: 26px; letter-spacing: 8px; padding: 8px; border-radius: 8px; background: #0f172a; border: 2px solid #ec4899; color: #fff; outline: none;">
+          </div>
+          <button type="button" id="btn-unlock-pin" class="btn-primary" style="padding: 10px 28px; font-size: 13px;">Unlock Inbox</button>
+          <div id="pin-error-msg" style="color: #ef4444; font-size: 12px; margin-top: 12px; display: none;">❌ Incorrect PIN. Access denied.</div>
+        </div>
+
+        <!-- View 3: Anisha's Private Host Inbox (PIN-secured) -->
+        <div id="host-view-inbox" style="display: none;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; gap: 8px; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <button type="button" id="btn-back-to-send" style="background: rgba(56, 189, 248, 0.15); border: 1px solid #38bdf8; color: #38bdf8; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 600; cursor: pointer;">⬅ Form</button>
+              <h4 style="color: #f472b6; font-size: 13px; font-family: var(--font-heading); letter-spacing: 1px;">📬 RECEIVED MESSAGES</h4>
+            </div>
+            <div style="display: flex; gap: 6px;">
+              <button type="button" id="btn-lock-inbox" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: #cbd5e1; padding: 4px 8px; border-radius: 4px; font-size: 11px; cursor: pointer;">🔒 Lock</button>
+              <button type="button" id="btn-clear-inbox" style="background: rgba(239, 68, 68, 0.15); border: 1px solid #ef4444; color: #fca5a5; padding: 4px 8px; border-radius: 4px; font-size: 11px; cursor: pointer;">Clear All</button>
+            </div>
+          </div>
+          <div id="host-inbox-list" style="max-height: 320px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px;">
+            <!-- Injected messages -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="brand-logo">
+        <div class="brand-icon">⚡</div>
+        <div class="brand-text">
+          <h2 style="font-family: var(--font-heading); font-size: 18px; color: #fff;">INSPIRE GAMES</h2>
+          <span>PLAY WITHOUT LIMITS</span>
+        </div>
+      </div>
+      
+      <div class="footer-links">
+        <a href="#games-grid">Bottle Shooter</a>
+        <a href="#games-grid">Bubble Shooter</a>
+        <a href="#games-grid">Granny Escape</a>
+        <a href="#games-grid">Chess</a>
+        <a href="#games-grid">Temple Run</a>
+        <a href="#games-grid">Space Invaders</a>
+        <a href="#games-grid">Cyber 2048</a>
+      </div>
+
+      <p class="footer-host-support">
+        Need help or have an issue? <a href="#" id="footer-contact-link" style="color: #f472b6; font-weight: 600; text-decoration: underline;">Contact Host Anisha privately</a>
+      </p>
+
+      <p class="footer-copy">© 2026 Inspire Games Portal. Built with pure HTML5, CSS3, Web Audio API, and Canvas 2D/3D. No installation needed.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/audio.js"></script>
+  <script src="js/games/bottle-shooter.js"></script>
+  <script src="js/games/bubble-shooter.js"></script>
+  <script src="js/games/granny.js"></script>
+  <script src="js/games/chess.js"></script>
+  <script src="js/games/temple-run.js"></script>
+  <script src="js/games/space-invaders.js"></script>
+  <script src="js/games/2048.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
